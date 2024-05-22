@@ -1,0 +1,34 @@
+name: Linting and Testing Pipeline
+
+on:
+  push:
+    branches:
+      - '**'  # This triggers the workflow on push to any branch
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Use the appropriate Node.js version for your project
+
+      - name: Install dependencies
+        run: npm ci  # Use npm ci for faster and consistent dependency installation
+
+      - name: Run lint
+        run: npm run lint
+        continue-on-error: true  # Continue even if linting fails to also run tests
+
+      - name: Run tests
+        if: ${{ success() }}  # Only run tests if linting succeeded
+        run: npm run test
+
+      - name: Fail if linting or tests failed
+        if: failure()  # Fail the job if linting or tests failed
+        run: exit 1

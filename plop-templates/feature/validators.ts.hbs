@@ -1,0 +1,19 @@
+import { body } from 'express-validator';
+
+export const validateCreate{{pascalCase name}}Request = () => {
+return [
+body('firstName', 'FirstName is required').isString(),
+body('email', 'email is required/invalid').isString(),
+];
+};
+
+export const validateUpdate{{pascalCase name}}Request = () => {
+return [
+body('firstName', 'FirstName is required').isString(),
+];
+};
+export const validateDelete{{pascalCase name}}Request = () => {
+return [
+body('firstName', 'FirstName is required').isString(),
+];
+};

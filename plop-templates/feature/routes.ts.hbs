@@ -1,0 +1,18 @@
+import express from 'express';
+import {create{{pascalCase name}},get{{pascalCase name}},search{{pascalCase name}},update{{pascalCase
+name}},delete{{pascalCase name}},} from './controller';
+import {
+validateCreate{{pascalCase name}}Request,
+validateDelete{{pascalCase name}}Request,
+validateUpdate{{pascalCase name}}Request,
+} from './validators';
+
+const router = express.Router();
+
+router.get('/{{kebabCase name}}/search',/* isAuthenticated,*/ search{{pascalCase name}});
+router.get('/{{kebabCase name}}/:id',/* isAuthenticated,*/ get{{pascalCase name}});
+router.post('/{{kebabCase name}}/', /* isAuthenticated,*/ validateCreate{{pascalCase name}}Request(), create{{pascalCase name}});
+router.put('/{{kebabCase name}}/:id',validateUpdate{{pascalCase name}}Request(), update{{pascalCase name}});
+router.delete('/{{kebabCase name}}/:id',validateDelete{{pascalCase name}}Request(), delete{{pascalCase name}});
+
+export default router;

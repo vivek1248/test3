@@ -1,0 +1,374 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Node.js API"
+  },
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Users",
+      "description": "API for users in the system"
+    },
+    {
+      "name": "Urls",
+      "description": "API for Urls in the system"
+    },
+    {
+      "name": "Branch",
+      "description": "API for Branch in the system"
+    }
+  ],
+  "schemes": ["http", "https"],
+  "consumes": [
+    "application/json",
+    "multipart/form-data",
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json",
+    "multipart/form-data",
+    "application/x-www-form-urlencoded"
+  ],
+  "paths": {
+    "/users/signup": {
+      "post": {
+        "tags": ["Users"],
+        "description": "Create new user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to create",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New user is created",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        }
+      }
+    },
+    "/users/signin": {
+      "post": {
+        "tags": ["Users"],
+        "description": "Signin user in system",
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "User that we want to signin",
+            "schema": {
+              "$ref": "#/definitions/SignInUser"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Signin successfully",
+            "schema": {
+              "$ref": "#/definitions/SignInUser"
+            }
+          }
+        }
+      }
+    },
+    "/users/{userId}": {
+      "parameters": [
+        {
+          "name": "userId",
+          "in": "path",
+          "required": true,
+          "description": "ID of user that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "summary": "Get user by given ID",
+        "tags": ["Users"],
+        "responses": {}
+      }
+    },
+    "/urls/short": {
+      "post": {
+        "tags": ["Urls"],
+        "description": "Create new short url in system",
+        "parameters": [
+          {
+            "name": "url",
+            "in": "body",
+            "description": "Url that we want to short",
+            "schema": {
+              "$ref": "#/definitions/Url"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "New short Url is created",
+            "schema": {
+              "$ref": "#/definitions/Url"
+            }
+          }
+        }
+      }
+    },
+    "/urls/{urlId}": {
+      "parameters": [
+        {
+          "name": "urlId",
+          "in": "path",
+          "required": true,
+          "description": "ID of url that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "summary": "Get short by given ID",
+        "tags": ["Urls"],
+        "responses": {}
+      }
+    },
+    "/urls/list": {
+      "parameters": [
+        {
+          "name": "urlId",
+          "in": "path",
+          "required": true,
+          "description": "ID of url that we want to find",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "summary": "Get all short url list by user",
+        "tags": ["Urls"],
+        "responses": {}
+      }
+    }
+  },
+
+  "/branch/search": {
+    "get": {
+      "summary": "search Branch",
+      "tags": ["Branch"],
+      "parameters": [
+        { "$ref": "#/queries_collection/query_name" },
+        { "$ref": "#/queries_collection/query_status" },
+        { "$ref": "#/queries_collection/query_per_page" },
+        { "$ref": "#/queries_collection/query_page" }
+      ],
+      "responses": {
+        "200": { "$ref": "#/api_responses/code200Paging" },
+        "401": { "$ref": "#/api_responses/code401" },
+        "403": { "$ref": "#/api_responses/code403" },
+        "500": { "$ref": "#/api_responses/code500" }
+      }
+    }
+  },
+
+  "/branch": {
+    "post": {
+      "summary": "create branch",
+      "tags": ["Branch"],
+      "parameters": [
+        {
+          "in": "body",
+          "name": "body",
+          "description": "Create Branch",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Branch"
+          }
+        }
+      ],
+      "responses": {
+        "201": { "$ref": "#/api_responses/code201" },
+        "400": { "$ref": "#/api_responses/code400" },
+        "401": { "$ref": "#/api_responses/code401" },
+        "403": { "$ref": "#/api_responses/code403" },
+        "500": { "$ref": "#/api_responses/code500" }
+      }
+    }
+  },
+
+  "/branch/{id}": {
+    "get": {
+      "summary": "Get Branch by given ID",
+      "tags": ["Branch"],
+      "parameters": [{ "$ref": "#/path_collections/id" }],
+      "responses": {
+        "200": {
+          "description": "New Branch Created",
+          "schema": {
+            "$ref": "#/definitions/Branch"
+          }
+        },
+        "400": { "$ref": "#/api_responses/code400" },
+        "401": { "$ref": "#/api_responses/code401" },
+        "403": { "$ref": "#/api_responses/code403" },
+        "404": { "$ref": "#/api_responses/code404" },
+        "500": { "$ref": "#/api_responses/code500" }
+      }
+    },
+    "put": {
+      "tags": ["Branch"],
+      "description": "Update Branch in system",
+      "produces": ["application/json"],
+      "parameters": [
+        { "$ref": "#/paths_collection/id" },
+        {
+          "in": "body",
+          "name": "body",
+          "description": "Create Branch",
+          "required": true,
+          "schema": {
+            "$ref": "#/definitions/Branch"
+          }
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Branch is updated",
+          "schema": {
+            "$ref": "#/definitions/Branch"
+          }
+        },
+        "400": { "$ref": "#/api_responses/code400" },
+        "401": { "$ref": "#/api_responses/code401" },
+        "403": { "$ref": "#/api_responses/code403" },
+        "404": { "$ref": "#/api_responses/code404" },
+        "500": { "$ref": "#/api_responses/code500" }
+      }
+    },
+    "delete": {
+      "summary": "Delete branch by given ID",
+      "tags": ["Branch"],
+      "parameters": [{ "$ref": "#/paths_collection/id" }],
+      "responses": {
+        "200": {
+          "description": "Branch is deleted",
+          "schema": {
+            "$ref": "#/definitions/Branch"
+          }
+        },
+        "400": { "$ref": "#/api_responses/code400" },
+        "401": { "$ref": "#/api_responses/code401" },
+        "403": { "$ref": "#/api_responses/code403" },
+        "404": { "$ref": "#/api_responses/code404" },
+        "500": { "$ref": "#/api_responses/code500" }
+      }
+    }
+  },
+
+  "definitions": {
+    "User": {
+      "required": ["firstName", "lastName", "email", "password"],
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "required": true
+        },
+        "lastName": {
+          "type": "string",
+          "required": true
+        },
+        "email": {
+          "type": "string",
+          "required": true
+        },
+        "password": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "SignInUser": {
+      "required": ["email", "password"],
+      "properties": {
+        "email": {
+          "type": "string",
+          "required": true
+        },
+        "password": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "Url": {
+      "required": ["originalUrl"],
+      "properties": {
+        "originalUrl": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "Branch": {
+      "required": ["email", "password"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "required": true
+        },
+        "prefix": {
+          "type": "string",
+          "required": true
+        },
+        "contact": {
+          "type": "string",
+          "required": true
+        },
+        "altContact": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "gstin": {
+          "type": "string"
+        },
+        "pan": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string",
+          "required": true
+        },
+        "address": {
+          "type": "string",
+          "required": true
+        },
+        "isDefault": {
+          "type": "Boolean",
+          "default": false
+        },
+        "branchUsers": {
+          "type": "[string]"
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "token": {
+      "type": "apiKey",
+      "name": "token",
+      "description": "API key to authorize requests",
+      "in": "header"
+    }
+  },
+  "security": [
+    {
+      "token": []
+    }
+  ]
+}
