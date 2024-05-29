@@ -2,7 +2,7 @@
 
 import mongoose from 'mongoose';
 
-// const { Schema } = mongoose;
+// const { Scema } = mongoose;
 
 const usersSchema = new Schema(
   {},

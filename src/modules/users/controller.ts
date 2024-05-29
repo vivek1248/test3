@@ -5,7 +5,7 @@ import { responseMessages } from '../../constants/responseMessages';
 import {
   extractErrors,
   handleCustomError,
-} from '../../utils/customErrors/handleCustomErrors';
+} from '../../utils/customErrors/handleCustomErrrs';
 import { sendResponse } from '../../utils/sendResponse';
 import { get } from '../users/services';
 

@@ -7,7 +7,7 @@ export const validateCreateUsersRequest = () => {
   ];
 };
 
-export const validateUpdateUsersRequest = () => {
+export const valiateUpdateUsersRequest = () => {
   return [body('firstName', 'FirstName is required').isString()];
 };
 export const validateDeleteUsersRequest = () = {
