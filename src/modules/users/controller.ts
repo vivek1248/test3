@@ -13,10 +13,10 @@ export const createUsers = async (req: Request, res: Response) => {
   try {
     const errors = validationResult(req)
 
-    if (!errors.isEmpty()) {
-      const extractedErrors = extractErrors(errors);
-      return sendResponse(res, 422, {}, { errors: extractedErrors });
-    }
+    // if (!errors.isEmpty()) {
+    //   const extractedErrors = extractErrors(errors);
+    //   return sendResponse(res, 422, {}, { errors: extractedErrors });
+    // }
 
     // write code here
     // const { email } = req.body;
@@ -96,3 +96,12 @@ export const deleteUsers = async (req: Request, res: Response) => {
   // this is added by vivek baraiya
 };
 // this is by vaibhav
+// Jeel1
+
+// Jeel2
+
+// Jeel3
+
+// Jeel4
+
+// Jeel5

@@ -10,6 +10,15 @@ export const validateCreateUsersRequest = () => {
 export const valiateUpdateUsersRequest = () => {
   return [body('firstName', 'FirstName is required').isString()];
 };
-export const validateDeleteUsersRequest = () = {
-  return [body('firstName', 'FirstName is required').isString()];
-};
+// export const validateDeleteUsersRequest = () = {
+//   return [body('firstName', 'FirstName is required').isString()];
+// };
+// Jeel1
+
+// Jeel2
+
+// Jeel3
+
+// Jeel4
+
+// Jeel5

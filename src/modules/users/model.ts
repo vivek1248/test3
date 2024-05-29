@@ -15,3 +15,15 @@ const Users = mongoose.model('Users', usersSchema);
 
 export default Users
 // dv
+console.log("hello");
+export default Users;
+// dv
+// Jeel1
+
+// Jeel2
+
+// Jeel3
+
+// Jeel4
+
+// Jeel5
