@@ -1,4 +1,4 @@
-function add(add) {
-    return add/5;
+function divide(number) {
+    return number/15;
 }
-add(10);
+divide(number)
