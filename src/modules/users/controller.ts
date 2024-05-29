@@ -60,7 +60,7 @@ export const searchUsers = async (req: Request, res: Response) => {
     return handleCustomError(res, err);
   }
 };
-
+// this is added by vivek baraiya 
 export const updateUsers = async (req: Request, res: Response) => {
   try {
     const errors = validationResult(req);
