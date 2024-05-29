@@ -8,7 +8,7 @@ import {
 } from './controller';
 import {
   validateCreateUsersRequest,
-  validateDeleteUsersRequest,
+  validateDeleteUsersRequest,:i
   validateUpdateUsersRequest,
 } from './validators';
 
