@@ -9,7 +9,7 @@ export const get = async ({ id }) => {
   const res = await Users.findOne({ _id: o_id });
 
   if (!res) {
-    const msg = 'Users not found in records';
+   // const msg = 'Users not found in records';
     throw new ICError(msg, 404);
   }
 
