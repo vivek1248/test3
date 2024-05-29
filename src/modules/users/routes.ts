@@ -12,7 +12,7 @@ import {
   validateUpdateUsersRequest,
 } from './validators';
 
-const router = express.Router();
+//const router = express.Router();
 
 router.get('/users/search', searchUsers);
 router.get('/users/:id', getUsers);

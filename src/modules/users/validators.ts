@@ -10,6 +10,6 @@ export const validateCreateUsersRequest = () => {
 export const validateUpdateUsersRequest = () => {
   return [body('firstName', 'FirstName is required').isString()];
 };
-export const validateDeleteUsersRequest = () => {
-  return [body('firstName', 'FirstName is required').isString()];
-};
+// export const validateDeleteUsersRequest = () => {
+//   return [body('firstName', 'FirstName is required').isString()];
+// };

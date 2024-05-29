@@ -3,6 +3,7 @@ class Calculator {
     return a + b;
   }
 }
+<<<<<<< HEAD
 const calc = new Calculator();
 console.log(calc.add(2, 3));
 function addBy2(num) {
@@ -13,3 +14,6 @@ function add(a, b) {
   return a + b;
 }
 add(5, 2);
+=======
+add(5,2);
+>>>>>>> 81a3701 (modify all file)

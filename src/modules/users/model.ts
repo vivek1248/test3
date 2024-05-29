@@ -13,6 +13,6 @@ const usersSchema = new Schema(
 //hello
 
 const Users = mongoose.model('Users', usersSchema);
-
+console.log("hello");
 export default Users;
 // dv
