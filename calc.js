@@ -4,3 +4,4 @@ function add(add) {
 mul(10);
 
 divide(number)
+// new features add here
