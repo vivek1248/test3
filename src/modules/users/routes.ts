@@ -1,6 +1,6 @@
 import express from 'express';
 import {
-  createUsers,
+  creteUsers,
   deleteUsers,
   getUsers,
   searchUsers,
@@ -11,7 +11,7 @@ import {
   validateDeleteUsersRequest,:i
   validateUpdateUsersRequest,
 } from './validators';
-
+dflgksdflkgmsd
 //const router = express.Router();
 
 router.get('/users/search', searchUsers);

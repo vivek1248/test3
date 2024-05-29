@@ -1,8 +1,7 @@
 //this is smit patel
 
 import mongoose from 'mongoose';
-
-// const { Schema } = mongoose;
+// const { Scema } = mongoose;
 
 const usersSchema = new Schema(
   {},
@@ -13,6 +12,9 @@ const usersSchema = new Schema(
 //hello
 
 const Users = mongoose.model('Users', usersSchema);
+
+export default Users
+// dv
 console.log("hello");
 export default Users;
 // dv
