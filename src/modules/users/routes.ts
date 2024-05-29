@@ -19,7 +19,7 @@ router.get('/users/:id', getUsers);
 router.post(
   '/users/',
 
-  validateCreateUsersRequest(),
+  //validateCreateUsersRequest(),
   createUsers,
 );
 router.put('/users/:id', validateUpdateUsersRequest(), updateUsers);
