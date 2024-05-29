@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Calculator {
   add(a, b) {
     return a + b;
@@ -17,4 +18,9 @@ add(5,2);
 
 function add(add) {
     return add/5;
+=======
+function mul(a){
+    return a*10;
+>>>>>>> c534594 (add divide by 5)
 }
+mul(10);
