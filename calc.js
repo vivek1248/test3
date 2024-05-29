@@ -8,4 +8,6 @@ console.log(calc.add(2, 3));
 function add(a,b){
     return a+b;
 }
-add(5,2);
+add(5,2);function Hello(a, b) {
+    return a / b;
+}
