@@ -2,7 +2,7 @@ import { Schema } from 'mongoose';
 import Users from './model';
 import { ICError } from '../../utils/customErrors/ic_error';
 
-export const create = async () => {};
+export const create = async () => {}
 export const get = async ({ id }) => {
   const o_id = new Schema.ObjectId(id);
 

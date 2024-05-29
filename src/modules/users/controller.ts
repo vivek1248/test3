@@ -11,7 +11,7 @@ import { get } from '../users/services';
 
 export const createUsers = async (req: Request, res: Response) => {
   try {
-    const errors = validationResult(req);
+    const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
       const extractedErrors = extractErrors(errors);

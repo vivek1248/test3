@@ -14,5 +14,5 @@ const usersSchema = new Schema(
 
 const Users = mongoose.model('Users', usersSchema);
 
-export default Users;
+export default Users
 // dv
