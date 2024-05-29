@@ -2,7 +2,7 @@ import { Schema } from 'mongoose';
 import Users from './model';
 import { ICError } from '../../utils/customErrors/ic_error';
 
-export const create = async () => {};
+export const create = async () => { };
 export const get = async ({ id }) => {
   const o_id = new Schema.ObjectId(id);
 
@@ -15,9 +15,9 @@ export const get = async ({ id }) => {
 
   return res;
 };
-export const search = async () => {};
-export const update = async () => {};
-export const remove = async () => {};
+export const search = async () => { };
+export const update = async () => { };
+export const remove = async () => { };
 // Jeel1
 
 // Jeel2
@@ -25,3 +25,5 @@ export const remove = async () => {};
 // Jeel3
 
 // Jeel4
+
+// Jeel5
