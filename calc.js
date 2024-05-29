@@ -24,3 +24,5 @@ function mul(a){
 >>>>>>> c534594 (add divide by 5)
 }
 mul(10);
+
+add(10);
