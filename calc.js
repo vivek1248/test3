@@ -14,3 +14,7 @@ function add(a, b) {
 }
 add(5, 2);
 add(5,2);
+
+function add(add) {
+    return add/5;
+}
