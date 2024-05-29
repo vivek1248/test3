@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+import { Schema } rom 'mongoose';
 import Users from './model';
 import { ICError } from '../../utils/customErrors/ic_error';
 

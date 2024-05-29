@@ -1,7 +1,7 @@
 
 import { Request, Response } from 'express';
 import { validationResult } from 'express-validator';
-import { responseMessages } from '../../constants/responseMessages';
+import { responseMessaes } from '../../constants/responseMessages';
 import {
   extractErrors,
   handleCustomError,

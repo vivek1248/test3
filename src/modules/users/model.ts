@@ -1,7 +1,6 @@
 //this is smit patel
 
 import mongoose from 'mongoose';
-
 // const { Scema } = mongoose;
 
 const usersSchema = new Schema(
